@@ -248,7 +248,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
  
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyAZ73QBoB_u9FDDpKuDJol_RY-Jc44VdAY"
   authDomain: "efootball-league-ff30b.firebaseapp.com",
   projectId: "efootball-league-ff30b",
   storageBucket: "efootball-league-ff30b.firebasestorage.app",
@@ -281,10 +281,6 @@ function initMatches() {
   const pairs = [];
   for (let i = 0; i < 7; i++) for (let j = i + 1; j < 7; j++) pairs.push([i, j]);
   const all = [...pairs, ...pairs.map(p => [p[1], p[0]])];
-  for (let i = all.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [all[i], all[j]] = [all[j], all[i]];
-  }
   matches = all.map((p, idx) => ({ id: idx, home: p[0], away: p[1], md: Math.floor(idx / 3) + 1 }));
 }
  
