@@ -221,16 +221,16 @@ body{font-family:'Roboto Condensed',sans-serif;background:var(--bg);color:var(--
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="season-tag"><span class="live-dot"></span>Season 2025</div>
-    <h1>SQUAD<br><span>LEAGUE</span></h1>
-    <div class="hero-sub">eFootball · Shield Format · 7 Warriors</div>
+    <div class="season-tag"><span class="live-dot"></span>Season 2</div>
+    <h1>E-Football<br><span>LEAGUE</span></h1>
+    <div class="hero-sub">eFootball · Round Robin · 7 Teams</div>
   </div>
 </div>
 
 <!-- CHAMPION BAR -->
 <div class="champion-bar" id="champion-bar">
   <span class="trophy-icon">🏆</span>
-  <span id="champion-text">TOURNAMENT IN PROGRESS — WHO WILL LIFT THE SHIELD?</span>
+  <span id="champion-text">TOURNAMENT IN PROGRESS — WHO WILL LIFT THE TROPHY?</span>
   <span class="trophy-icon">🏆</span>
 </div>
 
@@ -255,7 +255,7 @@ body{font-family:'Roboto Condensed',sans-serif;background:var(--bg);color:var(--
     <div id="standings-body"></div>
   </div>
   <div style="display:flex;gap:16px;margin-top:12px;font-size:10px;color:var(--muted);letter-spacing:1px;flex-wrap:wrap">
-    <span>🥇 Gold — Shield Champion (top of table)</span>
+    <span>🥇 Gold — Champion (top of table)</span>
     <span>⚽ GD = Goal Difference</span>
     <span>📋 Form = Last 5 matches</span>
   </div>
@@ -287,7 +287,7 @@ body{font-family:'Roboto Condensed',sans-serif;background:var(--bg);color:var(--
 <div class="winner-screen" id="winner-screen">
   <div class="confetti-wrap" id="confetti"></div>
   <div class="winner-trophy">🏆</div>
-  <div class="winner-title">Shield Champion</div>
+  <div class="winner-title"> Champion</div>
   <div class="winner-name" id="winner-name">—</div>
   <div class="winner-sub" id="winner-pts">— pts · — matches played</div>
   <button class="winner-close" onclick="document.getElementById('winner-screen').classList.remove('show')">Close</button>
@@ -297,13 +297,13 @@ body{font-family:'Roboto Condensed',sans-serif;background:var(--bg);color:var(--
 
 <script>
 const PLAYERS=[
-  {name:'Athul',short:'ARJ',clr:'#3A8DE2'},
-  {name:'Abhay',short:'ROH',clr:'#E24A6B'},
-  {name:'Aslam',short:'KIR',clr:'#FFB800'},
-  {name:'Manu',short:'DEV',clr:'#A78BFA'},
-  {name:'Edwin',short:'ANI',clr:'#00E5A0'},
-  {name:'Gokul',short:'SUR',clr:'#FF7A30'},
-  {name:'Jeffin',short:'NIT',clr:'#22D3EE'},
+  {name:'Athul',short:'ATK',clr:'#3A8DE2'},
+  {name:'Abhay',short:'ABK',clr:'#E24A6B'},
+  {name:'Aslam',short:'ASM',clr:'#FFB800'},
+  {name:'Manu',short:'MNU',clr:'#A78BFA'},
+  {name:'Edwin',short:'EDW',clr:'#00E5A0'},
+  {name:'Gokul',short:'GKL',clr:'#FF7A30'},
+  {name:'Jeffin',short:'JEF',clr:'#22D3EE'},
 ];
 let matches=[],scores={},winnerShown=false;
 function saveData(){
