@@ -184,6 +184,18 @@ body{font-family:'Roboto Condensed',sans-serif;background:var(--bg);color:var(--
     <div class="season-tag"><span class="live-dot"></span>Season 2</div>
     <h1>E-Football<br><span>LEAGUE</span></h1>
     <div class="hero-sub">eFootball · round robin · 7 Teams</div>
+    <button id="loginBtn" style="
+    margin-top:15px;
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background:#FFD700;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+">
+Admin Login
+</button>
   </div>
 </div>
 
@@ -489,10 +501,15 @@ renderAll();
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAZ73QBoB_u9FDDpKuDJol_RY-Jc44VdAY",
+  apiKey: "YOUR_API_KEY",
   authDomain: "efootball-league-ff30b.firebaseapp.com",
   projectId: "efootball-league-ff30b",
   storageBucket: "efootball-league-ff30b.firebasestorage.app",
@@ -501,12 +518,29 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-window.db = getFirestore(app);
-window.auth = getAuth(app);
-window.provider = new GoogleAuthProvider();
+const db = getFirestore(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
-window.adminLogin = async function(){
-  await signInWithPopup(window.auth, window.provider);
-  alert("Login successful");
-}
+window.isAdmin = false;
+
+document.getElementById("loginBtn").addEventListener("click", async () => {
+  try {
+    await signInWithPopup(auth, provider);
+  } catch (err) {
+    console.error(err);
+    alert("Login failed");
+  }
+});
+
+onAuthStateChanged(auth, (user) => {
+  if (!user) return;
+
+  if (user.email === "abhaykrishnaps25@gmail.com") {
+    window.isAdmin = true;
+    document.getElementById("loginBtn").textContent =
+      "Admin: " + user.displayName;
+    alert("Admin login successful");
+  }
+});
 </script>
