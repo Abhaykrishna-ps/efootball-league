@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap');
@@ -164,6 +165,45 @@ body{font-family:'Roboto Condensed',sans-serif;background:var(--bg);color:var(--
 .st-head,.st-row{min-width:620px}
 .match-card{grid-template-columns:1fr;gap:8px;text-align:center}
 .team-home,.team-away{justify-content:center;text-align:center}
+}
+
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media screen and (max-width:768px){
+  .hero-inner{padding:20px 15px 0;}
+  .hero h1{font-size:38px;letter-spacing:2px;}
+  .hero-sub{font-size:11px;letter-spacing:2px;}
+  .season-tag{font-size:9px;letter-spacing:2px;}
+  .champion-bar{font-size:10px;letter-spacing:1px;padding:8px;}
+  .nav{overflow-x:auto;scrollbar-width:none;}
+  .nav::-webkit-scrollbar{display:none;}
+  .nav-tab{min-width:120px;font-size:12px;padding:12px 8px;}
+  .panel{padding:12px;}
+  .metric-strip{grid-template-columns:repeat(2,1fr);}
+  .metric-val{font-size:22px;}
+  .standings-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .st-head,.st-row{min-width:700px;}
+  .match-card{display:flex;flex-direction:column;align-items:center;gap:12px;padding:15px;}
+  .team-home,.team-away{justify-content:center;text-align:center;}
+  .score-center{flex-wrap:wrap;justify-content:center;}
+  .save-btn{width:100%;margin-top:10px;}
+  .filter-row{flex-direction:column;}
+  .filter-row select,.filter-row button{width:100%;}
+  .pcard-grid{grid-template-columns:1fr;}
+  .winner-name{font-size:34px;}
+  .winner-title{font-size:12px;letter-spacing:3px;}
+  .winner-sub{font-size:11px;padding:0 20px;}
+  .winner-trophy{font-size:55px;}
+}
+@media screen and (max-width:480px){
+  .hero h1{font-size:32px;}
+  .metric{padding:10px 6px;}
+  .metric-val{font-size:20px;}
+  .ava{width:26px;height:26px;font-size:10px;}
+  .pname{font-size:13px;}
+  .team-name{font-size:13px;}
+  .score-box,.score-inp{width:30px;height:30px;font-size:16px;}
+  .winner-name{font-size:28px;}
 }
 
 </style>
